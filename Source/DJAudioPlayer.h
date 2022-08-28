@@ -31,6 +31,9 @@ public:
   void start();
   void stop();
 
+  void setFilterFreq(double inputFreq);
+  void setFilterRes(double inputRes);
+
   /** get the relative position of the playhead */
   double getPositionRelative();
   URL currentURL;
@@ -42,4 +45,8 @@ private:
   ResamplingAudioSource resampleSource{&transportSource, false, 2};
   IIRFilterAudioSource highPassFilter{&transportSource, false};
   IIRCoefficients highPassFilterCoeff;
+
+  double currentSampleRate;
+  double currentFilterFreq = 20.0f;
+  double currentFilterRes = 0.1f;
 };

@@ -20,10 +20,12 @@ DJAudioPlayer::~DJAudioPlayer()
 
 void DJAudioPlayer::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
 {
+    currentSampleRate = sampleRate;
+
     transportSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
     resampleSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
-    highPassFilterCoeff = highPassFilterCoeff.makeHighPass(sampleRate, 20.0f, 0.1f);
+    highPassFilterCoeff = highPassFilterCoeff.makeHighPass(sampleRate, currentFilterFreq, currentFilterRes);
     highPassFilter.setCoefficients(highPassFilterCoeff);
     highPassFilter.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
@@ -103,4 +105,21 @@ void DJAudioPlayer::stop()
 double DJAudioPlayer::getPositionRelative()
 {
     return transportSource.getCurrentPosition() / transportSource.getLengthInSeconds();
+}
+
+void DJAudioPlayer::setFilterFreq(double inputFreq)
+{
+    currentFilterFreq = inputFreq;
+    highPassFilterCoeff = highPassFilterCoeff.makeHighPass(currentSampleRate, inputFreq, currentFilterRes);
+    highPassFilter.setCoefficients(highPassFilterCoeff);
+
+    DBG("DJAudioPlayer::setFilterFreq freq is set to " << currentFilterFreq);
+}
+void DJAudioPlayer::setFilterRes(double inputRes)
+{
+    currentFilterRes = inputRes;
+    highPassFilterCoeff = highPassFilterCoeff.makeHighPass(currentSampleRate, currentFilterFreq, inputRes);
+    highPassFilter.setCoefficients(highPassFilterCoeff);
+
+    DBG("DJAudioPlayer::setFilterRes res is set to " << currentFilterRes);
 }

@@ -57,6 +57,8 @@ private:
   Slider volSlider;
   Slider speedSlider;
   Slider posSlider;
+  Slider filterFreqSlider;
+  Slider filterResSlider;
 
   FileChooser fChooser{"Select a file..."};
 

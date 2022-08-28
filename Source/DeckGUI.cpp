@@ -29,6 +29,8 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
     addAndMakeVisible(volSlider);
     addAndMakeVisible(speedSlider);
     addAndMakeVisible(posSlider);
+    addAndMakeVisible(filterFreqSlider);
+    addAndMakeVisible(filterResSlider);
 
     addAndMakeVisible(waveformDisplay);
 
@@ -40,10 +42,14 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
     volSlider.addListener(this);
     speedSlider.addListener(this);
     posSlider.addListener(this);
+    filterFreqSlider.addListener(this);
+    filterResSlider.addListener(this);
 
     volSlider.setRange(0.0, 1.0);
     speedSlider.setRange(0.0, 100.0);
     posSlider.setRange(0.0, 1.0);
+    filterFreqSlider.setRange(20.0f, 20000.0f);
+    filterResSlider.setRange(0.1f, 1.0f);
 
     startTimer(500);
 }
@@ -82,6 +88,8 @@ void DeckGUI::resized()
     waveformDisplay.setBounds(0, rowH * 5, getWidth(), rowH * 2);
     loadButton.setBounds(0, rowH * 7, getWidth() / 2, rowH);
     addToListButton.setBounds(getWidth() / 2, rowH * 7, getWidth() / 2, rowH);
+    filterFreqSlider.setBounds(0, rowH * 8, getWidth() / 2, rowH);
+    filterResSlider.setBounds(getWidth() / 2, rowH * 8, getWidth() / 2, rowH);
 }
 
 void DeckGUI::buttonClicked(Button *button)
@@ -138,6 +146,14 @@ void DeckGUI::sliderValueChanged(Slider *slider)
     if (slider == &posSlider)
     {
         player->setPositionRelative(slider->getValue());
+    }
+    if (slider == &filterFreqSlider)
+    {
+        player->setFilterFreq(slider->getValue());
+    }
+    if (slider == &filterResSlider)
+    {
+        player->setFilterRes(slider->getValue());
     }
 }
 
