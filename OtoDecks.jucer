@@ -12,6 +12,10 @@
       <FILE id="mYAoFQ" name="DeckGUI.h" compile="0" resource="0" file="Source/DeckGUI.h"/>
       <FILE id="wVNknK" name="PlaylistComponent.cpp" compile="1" resource="0"
             file="Source/PlaylistComponent.cpp"/>
+      <FILE id="O9sMjU" name="HighPassFilter.cpp" compile="1" resource="0"
+            file="Source/HighPassFilter.cpp"/>
+      <FILE id="vVJyZ9" name="HighPassFilter.h" compile="0" resource="0"
+            file="Source/HighPassFilter.h"/>
       <FILE id="u9rOxs" name="PlaylistComponent.h" compile="0" resource="0"
             file="Source/PlaylistComponent.h"/>
       <FILE id="pi9cbG" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
