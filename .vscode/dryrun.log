@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/HDD1/Docs/UoL/ObjectOrientedProgramming/OtoDecks'
+make: Leaving directory '/mnt/HDD1/Docs/UoL/ObjectOrientedProgramming/OtoDecks'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
