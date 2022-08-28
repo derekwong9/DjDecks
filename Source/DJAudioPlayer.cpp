@@ -22,10 +22,15 @@ void DJAudioPlayer::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 {
     transportSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
     resampleSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
+
+    highPassFilterCoeff = highPassFilterCoeff.makeHighPass(sampleRate, 20.0f, 0.1f);
+    highPassFilter.setCoefficients(highPassFilterCoeff);
+    highPassFilter.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
 void DJAudioPlayer::getNextAudioBlock(const AudioSourceChannelInfo &bufferToFill)
 {
     resampleSource.getNextAudioBlock(bufferToFill);
+    highPassFilter.getNextAudioBlock(bufferToFill);
 }
 void DJAudioPlayer::releaseResources()
 {

@@ -40,4 +40,6 @@ private:
   std::unique_ptr<AudioFormatReaderSource> readerSource;
   AudioTransportSource transportSource;
   ResamplingAudioSource resampleSource{&transportSource, false, 2};
+  IIRFilterAudioSource highPassFilter{&transportSource, false};
+  IIRCoefficients highPassFilterCoeff;
 };

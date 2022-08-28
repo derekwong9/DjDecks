@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 28 14:07:03 2022
+# Make data base, printed on Sun Aug 28 16:38:08 2022
 
 # Variables
 
@@ -95,7 +95,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 9547
+GIO_LAUNCHED_DESKTOP_FILE_PID = 24735
 # automatic
 %F = $(notdir $%)
 # environment
@@ -211,7 +211,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9547
+VSCODE_PID = 24735
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -223,9 +223,9 @@ _CE_CONDA =
 
 # Directories
 
-# . (device 2050, inode 392653): 8 files, no impossibilities.
+# . (device 2050, inode 392653): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -275,13 +275,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 147 B / avg = 9 B
-# current buf: size = 8162 B / used = 147 B / count = 16 / avg = 9 B
- 
+# strcache buffers: 1 (0) / strings = 17 / storage = 152 B / avg = 8 B
+# current buf: size = 8162 B / used = 152 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 15%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Sun Aug 28 14:07:03 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Sun Aug 28 16:38:08 2022
 
  
