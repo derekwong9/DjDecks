@@ -49,23 +49,26 @@ public:
   void timerCallback() override;
 
 private:
+  // active buttons
   TextButton playButton{"PLAY"};
   TextButton stopButton{"STOP"};
   TextButton loadButton{"LOAD"};
   TextButton addToListButton{"ADD TO LIST"};
-
+  // sliders
   Slider volSlider;
   Slider speedSlider;
   Slider posSlider;
   Slider filterFreqSlider;
   Slider filterResSlider;
 
+  // components
   FileChooser fChooser{"Select a file..."};
-
   WaveformDisplay waveformDisplay;
-
   DJAudioPlayer *player;
   PlaylistComponent *playlistComponent;
 
+  // display elements
+  TextButton buttonPanel;
+  TextButton sliderPanel;
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DeckGUI)
 };

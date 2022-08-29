@@ -20,20 +20,21 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
                                                           playlistComponent(_playlistComponent)
 
 {
-
+    // active buttons
     addAndMakeVisible(playButton);
     addAndMakeVisible(stopButton);
     addAndMakeVisible(loadButton);
     addAndMakeVisible(addToListButton);
-
+    // sliders
     addAndMakeVisible(volSlider);
     addAndMakeVisible(speedSlider);
     addAndMakeVisible(posSlider);
     addAndMakeVisible(filterFreqSlider);
     addAndMakeVisible(filterResSlider);
-
+    // waveform display
     addAndMakeVisible(waveformDisplay);
 
+    // Listeners
     playButton.addListener(this);
     stopButton.addListener(this);
     loadButton.addListener(this);
@@ -44,13 +45,25 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
     posSlider.addListener(this);
     filterFreqSlider.addListener(this);
     filterResSlider.addListener(this);
-
+    // Ranges
     volSlider.setRange(0.0, 1.0);
-    speedSlider.setRange(0.0, 100.0);
+    speedSlider.setRange(0.0, 3);
     posSlider.setRange(0.0, 1.0);
     filterFreqSlider.setRange(20.0f, 20000.0f);
     filterResSlider.setRange(0.1f, 1.0f);
 
+    // default values
+    volSlider.setValue(1);
+    speedSlider.setValue(0);
+    filterFreqSlider.setValue(20.0f);
+    filterResSlider.setValue(0.1f);
+
+    // display elements
+    buttonPanel.setColour(TextButton::buttonColourId, Colours::dodgerblue);
+    sliderPanel.setColour(TextButton::buttonColourId, Colours::dodgerblue);
+    addAndMakeVisible(buttonPanel);
+    addAndMakeVisible(sliderPanel);
+    // timer
     startTimer(500);
 }
 
@@ -79,17 +92,35 @@ void DeckGUI::paint(Graphics &g)
 
 void DeckGUI::resized()
 {
-    double rowH = getHeight() / 9;
-    playButton.setBounds(0, 0, getWidth(), rowH);
-    stopButton.setBounds(0, rowH, getWidth(), rowH);
-    volSlider.setBounds(0, rowH * 2, getWidth(), rowH);
-    speedSlider.setBounds(0, rowH * 3, getWidth(), rowH);
-    posSlider.setBounds(0, rowH * 4, getWidth(), rowH);
-    waveformDisplay.setBounds(0, rowH * 5, getWidth(), rowH * 2);
-    loadButton.setBounds(0, rowH * 7, getWidth() / 2, rowH);
-    addToListButton.setBounds(getWidth() / 2, rowH * 7, getWidth() / 2, rowH);
-    filterFreqSlider.setBounds(0, rowH * 8, getWidth() / 2, rowH);
-    filterResSlider.setBounds(getWidth() / 2, rowH * 8, getWidth() / 2, rowH);
+    // initialize bounds
+    auto area = getLocalBounds();
+    // relative size settings
+    int largeHeight = getHeight() / 3;
+    int smallHeight = getHeight() / 6;
+    int buttonWidth = getWidth() / 4;
+    int sliderWidth = getWidth() / 4;
+
+    // waveform display
+    waveformDisplay.setBounds(area.removeFromTop(largeHeight));
+
+    // position slider
+    posSlider.setBounds(area.removeFromTop(smallHeight));
+
+    // buttons
+    Rectangle buttonPanelArea = area.removeFromTop(smallHeight);
+
+    // buttonPanel.setBounds(buttonPanelArea);
+    playButton.setBounds(buttonPanelArea.removeFromLeft(buttonWidth));
+    stopButton.setBounds(buttonPanelArea.removeFromLeft(buttonWidth));
+    loadButton.setBounds(buttonPanelArea.removeFromLeft(buttonWidth));
+    addToListButton.setBounds(buttonPanelArea.removeFromLeft(buttonWidth));
+
+    // slider panel
+    Rectangle sliderPanelArea = area.removeFromTop(largeHeight);
+    speedSlider.setBounds(sliderPanelArea.removeFromLeft(sliderWidth));
+    volSlider.setBounds(sliderPanelArea.removeFromLeft(sliderWidth));
+    filterFreqSlider.setBounds(sliderPanelArea.removeFromLeft(sliderWidth));
+    filterResSlider.setBounds(sliderPanelArea.removeFromLeft(sliderWidth));
 }
 
 void DeckGUI::buttonClicked(Button *button)
