@@ -615,4 +615,5 @@ build/intermediate/Debug/DeckGUI_914d8333.o: ../../Source/DeckGUI.cpp \
  /home/derek/JUCE/modules/juce_osc/osc/juce_OSCReceiver.h \
  /home/derek/JUCE/modules/juce_osc/osc/juce_OSCSender.h \
  ../../Source/DeckGUI.h ../../Source/DJAudioPlayer.h \
- ../../Source/WaveformDisplay.h ../../Source/PlaylistComponent.h
+ ../../Source/WaveformDisplay.h ../../Source/PlaylistComponent.h \
+ ../../Source/DeckGuiLookAndFeel.h

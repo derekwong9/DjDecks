@@ -10,6 +10,10 @@
       <FILE id="wYKZRX" name="DJAudioPlayer.h" compile="0" resource="0" file="Source/DJAudioPlayer.h"/>
       <FILE id="gVuqmC" name="DeckGUI.cpp" compile="1" resource="0" file="Source/DeckGUI.cpp"/>
       <FILE id="mYAoFQ" name="DeckGUI.h" compile="0" resource="0" file="Source/DeckGUI.h"/>
+      <FILE id="zJG5qc" name="DeckGuiLookAndFeel.cpp" compile="1" resource="0"
+            file="Source/DeckGuiLookAndFeel.cpp"/>
+      <FILE id="peCfeW" name="DeckGuiLookAndFeel.h" compile="0" resource="0"
+            file="Source/DeckGuiLookAndFeel.h"/>
       <FILE id="wVNknK" name="PlaylistComponent.cpp" compile="1" resource="0"
             file="Source/PlaylistComponent.cpp"/>
       <FILE id="u9rOxs" name="PlaylistComponent.h" compile="0" resource="0"

@@ -616,4 +616,5 @@ build/intermediate/Debug/MainComponent_a6ffb4a5.o: \
  /home/derek/JUCE/modules/juce_osc/osc/juce_OSCReceiver.h \
  /home/derek/JUCE/modules/juce_osc/osc/juce_OSCSender.h \
  ../../Source/DJAudioPlayer.h ../../Source/DeckGUI.h \
- ../../Source/WaveformDisplay.h ../../Source/PlaylistComponent.h
+ ../../Source/WaveformDisplay.h ../../Source/PlaylistComponent.h \
+ ../../Source/DeckGuiLookAndFeel.h

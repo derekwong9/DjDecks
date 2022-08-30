@@ -20,17 +20,41 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
                                                           playlistComponent(_playlistComponent)
 
 {
+    setLookAndFeel(&deckGuiLookAndFeel);
+
     // active buttons
     addAndMakeVisible(playButton);
     addAndMakeVisible(stopButton);
     addAndMakeVisible(loadButton);
     addAndMakeVisible(addToListButton);
-    // sliders
+
+    filterFreqSlider.textFromValueFunction = [](double value)
+    {
+        return String("Frequency");
+    };
+
+    volSlider.textFromValueFunction = [](double value)
+    {
+        return String("Volume");
+    };
+
+    speedSlider.textFromValueFunction = [](double value)
+    {
+        return String("Speed");
+    };
+
+    filterResSlider.textFromValueFunction = [](double value)
+    {
+        return String("Resanance");
+    };
+
+    // sliders make visable
     addAndMakeVisible(volSlider);
     addAndMakeVisible(speedSlider);
     addAndMakeVisible(posSlider);
     addAndMakeVisible(filterFreqSlider);
     addAndMakeVisible(filterResSlider);
+
     // waveform display
     addAndMakeVisible(waveformDisplay);
 
@@ -53,8 +77,8 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
     filterResSlider.setRange(0.1f, 1.0f);
 
     // default values
-    volSlider.setValue(1);
-    speedSlider.setValue(0);
+    volSlider.setValue(1.0f);
+    speedSlider.setValue(0.0f);
     filterFreqSlider.setValue(20.0f);
     filterResSlider.setValue(0.1f);
 
@@ -171,6 +195,7 @@ void DeckGUI::sliderValueChanged(Slider *slider)
 
     if (slider == &speedSlider)
     {
+        // DBG("SPEED SLIDER CHANGED " << std::to_string(slider->getValue()));
         player->setSpeed(slider->getValue());
     }
 

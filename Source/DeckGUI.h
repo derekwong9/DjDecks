@@ -11,13 +11,14 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DJAudioPlayer.h"
-#include "WaveformDisplay.h"
-#include "PlaylistComponent.h"
-// #include "SearchBar.h"
 #include <array>
 #include <vector>
 #include <string>
+
+#include "DJAudioPlayer.h"
+#include "WaveformDisplay.h"
+#include "PlaylistComponent.h"
+#include "DeckGuiLookAndFeel.h"
 //==============================================================================
 /*
  */
@@ -55,11 +56,11 @@ private:
   TextButton loadButton{"LOAD"};
   TextButton addToListButton{"ADD TO LIST"};
   // sliders
-  Slider volSlider;
-  Slider speedSlider;
+  Slider volSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
+  Slider speedSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
   Slider posSlider;
-  Slider filterFreqSlider;
-  Slider filterResSlider;
+  Slider filterFreqSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
+  Slider filterResSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
 
   // components
   FileChooser fChooser{"Select a file..."};
@@ -70,5 +71,8 @@ private:
   // display elements
   TextButton buttonPanel;
   TextButton sliderPanel;
+
+  // LookAndFeel
+  DeckGuiLookAndFeel deckGuiLookAndFeel;
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DeckGUI)
 };

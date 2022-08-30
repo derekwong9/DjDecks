@@ -616,4 +616,4 @@ build/intermediate/Debug/Main_90ebc5c2.o: ../../Source/Main.cpp \
  /home/derek/JUCE/modules/juce_osc/osc/juce_OSCSender.h \
  ../../Source/MainComponent.h ../../Source/DJAudioPlayer.h \
  ../../Source/DeckGUI.h ../../Source/WaveformDisplay.h \
- ../../Source/PlaylistComponent.h
+ ../../Source/PlaylistComponent.h ../../Source/DeckGuiLookAndFeel.h
