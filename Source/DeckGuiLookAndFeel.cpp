@@ -34,20 +34,48 @@ void DeckGuiLookAndFeel::drawRotarySlider(juce::Graphics &g, int x, int y, int w
   auto angle = rotaryStartAngle + sliderPos * (rotaryEndAngle - rotaryStartAngle);
 
   // fill
-  g.setColour(juce::Colours::orange);
+  g.setColour(juce::Colours::blueviolet);
   g.fillEllipse(rx, ry, rw, rw);
 
   // outline
-  g.setColour(juce::Colours::red);
-  g.drawEllipse(rx, ry, rw, rw, 1.0f);
+  g.setColour(juce::Colours::navy);
+  g.drawEllipse(rx, ry, rw, rw, 3.0f);
 
   juce::Path p;
   auto pointerLength = radius * 0.33f;
-  auto pointerThickness = 2.0f;
-  p.addRectangle(-pointerThickness * 0.5f, -radius, pointerThickness, pointerLength);
+  auto pointerThickness = 5.0f;
+  p.addRectangle(-pointerThickness * 1.0f, -radius, pointerThickness, pointerLength);
   p.applyTransform(juce::AffineTransform::rotation(angle).translated(centreX, centreY));
 
   // pointer
-  g.setColour(juce::Colours::yellow);
+  g.setColour(juce::Colours::violet);
   g.fillPath(p);
+}
+
+void DeckGuiLookAndFeel::drawButtonBackground(juce::Graphics &g, juce::Button &button, const juce::Colour &backgroundColour,
+                                              bool, bool isButtonDown)
+{
+  if (button.getState() == Button::ButtonState::buttonDown)
+  {
+    button.setColour(TextButton::buttonColourId, Colours::cyan);
+  }
+  else
+  {
+    button.setColour(TextButton::buttonColourId, Colours::darkcyan);
+  }
+  auto buttonArea = button.getLocalBounds();
+  auto edge = 4;
+
+  buttonArea.removeFromLeft(edge);
+  buttonArea.removeFromTop(edge);
+
+  // shadow
+  g.setColour(juce::Colours::darkgrey.withAlpha(0.5f));
+  g.fillRect(buttonArea);
+
+  auto offset = isButtonDown ? -edge / 2 : -edge;
+  buttonArea.translate(offset, offset);
+
+  g.setColour(backgroundColour);
+  g.fillRect(buttonArea);
 }

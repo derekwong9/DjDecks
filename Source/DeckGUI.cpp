@@ -28,27 +28,9 @@ DeckGUI::DeckGUI(DJAudioPlayer *_player,
     addAndMakeVisible(loadButton);
     addAndMakeVisible(addToListButton);
 
-    filterFreqSlider.textFromValueFunction = [](double value)
-    {
-        return String("Frequency");
-    };
-
-    volSlider.textFromValueFunction = [](double value)
-    {
-        return String("Volume");
-    };
-
-    speedSlider.textFromValueFunction = [](double value)
-    {
-        return String("Speed");
-    };
-
-    filterResSlider.textFromValueFunction = [](double value)
-    {
-        return String("Resanance");
-    };
-
     // sliders make visable
+    setLabels();
+
     addAndMakeVisible(volSlider);
     addAndMakeVisible(speedSlider);
     addAndMakeVisible(posSlider);
@@ -107,7 +89,7 @@ void DeckGUI::paint(Graphics &g)
 
     g.fillAll(getLookAndFeel().findColour(ResizableWindow::backgroundColourId)); // clear the background
 
-    g.setColour(Colours::grey);
+    g.setColour(Colours::darkgrey);
     g.drawRect(getLocalBounds(), 1); // draw an outline around the component
 
     g.setColour(Colours::white);
@@ -151,12 +133,10 @@ void DeckGUI::buttonClicked(Button *button)
 {
     if (button == &playButton)
     {
-        std::cout << "Play button was clicked " << std::endl;
         player->start();
     }
     if (button == &stopButton)
     {
-        std::cout << "Stop button was clicked " << std::endl;
         player->stop();
     }
     if (button == &loadButton)
@@ -215,13 +195,11 @@ void DeckGUI::sliderValueChanged(Slider *slider)
 
 bool DeckGUI::isInterestedInFileDrag(const StringArray &files)
 {
-    std::cout << "DeckGUI::isInterestedInFileDrag" << std::endl;
     return true;
 }
 
 void DeckGUI::filesDropped(const StringArray &files, int x, int y)
 {
-    std::cout << "DeckGUI::filesDropped" << std::endl;
     if (files.size() == 1)
     {
         player->loadURL(URL{File{files[0]}});
@@ -230,13 +208,41 @@ void DeckGUI::filesDropped(const StringArray &files, int x, int y)
 
 void DeckGUI::timerCallback()
 {
-    // std::cout << "DeckGUI::timerCallback" << std::endl;
 
     if (player->currentURL != waveformDisplay.currentURL)
     {
         waveformDisplay.loadURL(player->currentURL);
     }
 
+    float playerPos = player->getPositionRelative();
     waveformDisplay.setPositionRelative(
-        player->getPositionRelative());
+        playerPos);
+}
+
+void DeckGUI::setLabels()
+{
+
+    filterFreqSlider.textFromValueFunction = [](double value)
+    {
+        return String("Frequency");
+    };
+
+    volSlider.textFromValueFunction = [](double value)
+    {
+        return String("Volume");
+    };
+
+    speedSlider.textFromValueFunction = [](double value)
+    {
+        return String("Speed");
+    };
+
+    filterResSlider.textFromValueFunction = [](double value)
+    {
+        return String("Resanance");
+    };
+    posSlider.textFromValueFunction = [](double value)
+    {
+        return String("Position");
+    };
 }

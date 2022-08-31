@@ -58,7 +58,7 @@ private:
   // sliders
   Slider volSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
   Slider speedSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
-  Slider posSlider;
+  Slider posSlider{Slider::LinearHorizontal, Slider::TextEntryBoxPosition::TextBoxLeft};
   Slider filterFreqSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
   Slider filterResSlider{Slider::Rotary, Slider::TextEntryBoxPosition::TextBoxBelow};
 
@@ -74,5 +74,9 @@ private:
 
   // LookAndFeel
   DeckGuiLookAndFeel deckGuiLookAndFeel;
+
+  // set labels
+  void setLabels();
+
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DeckGUI)
 };
