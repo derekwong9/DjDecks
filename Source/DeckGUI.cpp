@@ -87,7 +87,7 @@ void DeckGUI::paint(Graphics &g)
        drawing code..
     */
 
-    g.fillAll(getLookAndFeel().findColour(ResizableWindow::backgroundColourId)); // clear the background
+    g.fillAll(Colours::darkslategrey); // clear the background
 
     g.setColour(Colours::darkgrey);
     g.drawRect(getLocalBounds(), 1); // draw an outline around the component

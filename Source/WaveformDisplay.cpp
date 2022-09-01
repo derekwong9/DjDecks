@@ -37,7 +37,8 @@ void WaveformDisplay::paint(Graphics &g)
      drawing code..
   */
 
-  g.fillAll(getLookAndFeel().findColour(ResizableWindow::backgroundColourId)); // clear the background
+  // g.fillAll(getLookAndFeel().findColour(ResizableWindow::backgroundColourId)); // clear the background
+  g.fillAll(Colours::darkslateblue);
 
   g.setColour(Colours::darkgrey);
   g.drawRect(getLocalBounds(), 1); // draw an outline around the component

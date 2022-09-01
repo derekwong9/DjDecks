@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 31 21:12:08 2022
+# Make data base, printed on Thu Sep  1 20:41:55 2022
 
 # Variables
 
@@ -47,7 +45,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:57997
+JOURNAL_STREAM = 8:61931
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -63,7 +61,7 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1661
+MANAGERPID = 1756
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -75,7 +73,7 @@ PATH = /home/derek/anaconda3/bin:/home/derek/anaconda3/condabin:/usr/local/sbin:
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/derek-ubuntu:@/tmp/.ICE-unix/1876,unix/derek-ubuntu:/tmp/.ICE-unix/1876
+SESSION_MANAGER = local/derek-ubuntu:@/tmp/.ICE-unix/1965,unix/derek-ubuntu:/tmp/.ICE-unix/1965
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -85,7 +83,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 6137d9882d88456fb78c73fd7b6608e3
+INVOCATION_ID = e590ff5780394dc1ae711b93db9bb263
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -95,7 +93,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3063
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2401
 # automatic
 %F = $(notdir $%)
 # environment
@@ -107,7 +105,7 @@ PWD = /mnt/HDD1/Docs/UoL/ObjectOrientedProgramming/OtoDecks
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1841
+SSH_AGENT_PID = 1930
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -211,7 +209,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3063
+VSCODE_PID = 2401
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -233,7 +231,6 @@ _CE_CONDA =
 
 # Files
 
- 
 # Not a target:
 all:
 #  Command line target.
@@ -282,6 +279,9 @@ GNUmakefile:
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Wed Aug 31 21:12:08 2022
+# Finished Make data base on Thu Sep  1 20:41:55 2022
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
  

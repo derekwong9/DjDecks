@@ -25,6 +25,17 @@ public:
   void drawButtonBackground(juce::Graphics &g, juce::Button &button, const juce::Colour &backgroundColour,
                             bool, bool isButtonDown) override;
 
+  void drawLinearSliderBackground(Graphics &g,
+                                  int x,
+                                  int y,
+                                  int width,
+                                  int height,
+                                  float sliderPos,
+                                  float minSliderPos,
+                                  float maxSliderPos,
+                                  const Slider::SliderStyle,
+                                  Slider &) override;
+
 private:
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DeckGuiLookAndFeel)
 };

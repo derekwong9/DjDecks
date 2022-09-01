@@ -25,7 +25,6 @@ PlaylistComponent::PlaylistComponent(DJAudioPlayer *_player1,
   tableComponent.getHeader().addColumn("", 3, 200);
 
   tableComponent.setModel(this);
-
   addAndMakeVisible(tableComponent);
 
   libraryPath = std::filesystem::current_path().string() + "/library.dat";

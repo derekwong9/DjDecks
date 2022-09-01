@@ -21,10 +21,25 @@ DeckGuiLookAndFeel::DeckGuiLookAndFeel()
 DeckGuiLookAndFeel::~DeckGuiLookAndFeel()
 {
 }
+void DeckGuiLookAndFeel::drawLinearSliderBackground(Graphics &g,
+                                                    int x,
+                                                    int y,
+                                                    int width,
+                                                    int height,
+                                                    float sliderPos,
+                                                    float minSliderPos,
+                                                    float maxSliderPos,
+                                                    const Slider::SliderStyle,
+                                                    Slider &)
+{
+  g.fillAll(Colours::darkslategrey);
+}
 
 void DeckGuiLookAndFeel::drawRotarySlider(juce::Graphics &g, int x, int y, int width, int height, float sliderPos,
                                           const float rotaryStartAngle, const float rotaryEndAngle, juce::Slider &)
 {
+  g.fillAll(Colours::darkslategrey);
+
   auto radius = (float)juce::jmin(width / 2, height / 2) - 4.0f;
   auto centreX = (float)x + (float)width * 0.5f;
   auto centreY = (float)y + (float)height * 0.5f;
@@ -57,11 +72,11 @@ void DeckGuiLookAndFeel::drawButtonBackground(juce::Graphics &g, juce::Button &b
 {
   if (button.getState() == Button::ButtonState::buttonDown)
   {
-    button.setColour(TextButton::buttonColourId, Colours::cyan);
+    button.setColour(TextButton::buttonColourId, Colours::darkcyan);
   }
   else
   {
-    button.setColour(TextButton::buttonColourId, Colours::darkcyan);
+    button.setColour(TextButton::buttonColourId, Colours::slategrey);
   }
   auto buttonArea = button.getLocalBounds();
   auto edge = 4;
