@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Sep  1 20:41:55 2022
+# Make data base, printed on Tue Nov  8 17:45:18 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:61931
+JOURNAL_STREAM = 8:60132
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -61,7 +61,7 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1756
+MANAGERPID = 1639
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -69,11 +69,11 @@ VSCODE_CWD = /home/derek
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/derek/anaconda3/bin:/home/derek/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/derek/.local/share/JetBrains/Toolbox/scripts:/home/derek/.local/share/JetBrains/Toolbox/scripts
+PATH = /home/derek/.cargo/bin:/home/derek/anaconda3/bin:/home/derek/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/derek/.local/share/JetBrains/Toolbox/scripts:/home/derek/.local/share/JetBrains/Toolbox/scripts
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/derek-ubuntu:@/tmp/.ICE-unix/1965,unix/derek-ubuntu:/tmp/.ICE-unix/1965
+SESSION_MANAGER = local/derek-ubuntu:@/tmp/.ICE-unix/1849,unix/derek-ubuntu:/tmp/.ICE-unix/1849
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -83,7 +83,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e590ff5780394dc1ae711b93db9bb263
+INVOCATION_ID = 7a6411af260c4a05b65ec568e7dec7d3
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -93,7 +93,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2401
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6326
 # automatic
 %F = $(notdir $%)
 # environment
@@ -105,7 +105,7 @@ PWD = /mnt/HDD1/Docs/UoL/ObjectOrientedProgramming/OtoDecks
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1930
+SSH_AGENT_PID = 1814
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -117,7 +117,7 @@ HOME = /home/derek
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/derek/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /home/derek/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LOGNAME = derek
 # environment
@@ -165,7 +165,7 @@ MAKE_COMMAND := make
 # environment
 LANGUAGE = en_SG:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-f5468c6e-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-f5468c6e-1.72.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -209,7 +209,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2401
+VSCODE_PID = 6326
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -279,9 +279,8 @@ GNUmakefile:
 # strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Thu Sep  1 20:41:55 2022
+# Finished Make data base on Tue Nov  8 17:45:18 2022
+
  
 make: *** No rule to make target 'all'.  Stop.
 
-
- 
